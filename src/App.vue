@@ -215,13 +215,25 @@ provide("map", map);
   <article id="sideBar" class="fixed top-0 left-0 bottom-0">
     <AppDialog v-model="dialog.isVisible" :title="dialog.title">
       <template #default>
-        <div class="text-lg font-bold">{{ dialog.name }}</div>
-        <div class="text-sm text-stone-700">地址：{{ dialog.loacation }}</div>
-        <div class="text-sm text-stone-700">電話：{{ dialog.contactNumber }}</div>
-        <div class="text-sm text-stone-700">備註：{{ dialog.remark }}</div>
-        <div class="rounded-lg p-4 bg-green-900 text-white">
-          <div>快篩試劑剩餘存量</div>
-          <div>{{ dialog.num }}</div>
+        <div class="flex flex-col gap-y-2">
+          <div class="text-lg font-bold">{{ dialog.name }}</div>
+          <div class="text-sm">
+            <div class="text-stone-500">地址</div>
+            <div>{{ dialog.loacation }}</div>
+          </div>
+          <div class="text-sm">
+            <div class="text-stone-500">電話</div>
+            <div>{{ dialog.contactNumber }}</div>
+          </div>
+          <div class="text-sm">
+            <div class="text-stone-500">備註</div>
+            <div>{{ dialog.remark }}</div>
+          </div>
+          <hr class="my-4"/>
+          <div class="rounded-lg p-4 bg-green-900 text-white">
+            <div>快篩試劑剩餘存量</div>
+            <div>{{ dialog.num }}</div>
+          </div>
         </div>
       </template>
     </AppDialog>
