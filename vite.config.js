@@ -1,5 +1,5 @@
 import path from "path";
-import fs from "fs";
+import mkcert from "vite-plugin-mkcert";
 import { defineConfig } from "vite";
 import vue from "@vitejs/plugin-vue";
 import Icons from "unplugin-icons/vite";
@@ -9,13 +9,11 @@ import Components from "unplugin-vue-components/vite";
 export default defineConfig({
   server: {
     host: "0.0.0.0",
-    https: {
-      key: fs.readFileSync(".cert/privkey.pem"),
-      cert: fs.readFileSync(".cert/cert.pem"),
-    },
+    https: true,
   },
   plugins: [
     vue(),
+    mkcert(),
     Components({
       resolvers: [IconsResolver()],
     }),
