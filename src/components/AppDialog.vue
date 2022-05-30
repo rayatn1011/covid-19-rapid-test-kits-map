@@ -44,10 +44,10 @@ const closeDialog = () => {
           <div class="grow font-bold text-gray-700">{{ props.title }}</div>
           <button
             type="button"
-            class="text-gray-500 transition hover:text-red-500"
+            class="text-gray-400 transition hover:text-red-500"
             @click="closeDialog"
           >
-            X
+            <i-mdi-close-thick />
           </button>
         </div>
         <div class="overflow-auto p-4">
