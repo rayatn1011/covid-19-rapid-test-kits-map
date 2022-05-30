@@ -54,6 +54,7 @@ const addWatcher = () => {
         }),
       });
       iconFeature.setStyle(iconStyle);
+      componentSource.clear();
       componentSource.addFeature(iconFeature);
     }
   }
