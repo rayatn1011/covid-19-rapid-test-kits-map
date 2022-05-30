@@ -1,6 +1,7 @@
 <script setup>
-import { ref } from "vue";
+import { inject } from "vue";
 
+const isMobile = inject("isMobile");
 const props = defineProps({
   modelValue: {
     type: Boolean,
@@ -19,19 +20,39 @@ const closeDialog = () => {
 
 <template>
   <transition
-    enter-active-class="animate__animated animate__fadeInLeft animate__faster"
-    leave-active-class="animate__animated animate__fadeOutLeft animate__faster"
+    :enter-active-class="
+      isMobile
+        ? 'animate__animated animate__fadeInUp animate__faster'
+        : 'animate__animated animate__fadeInLeft animate__faster'
+    "
+    :leave-active-class="
+      isMobile
+        ? 'animate__animated animate__fadeOutDown animate__faster'
+        : 'animate__animated animate__fadeOutLeft animate__faster'
+    "
   >
     <section
-      class="absolute top-4 bottom-4 left-4 w-80 bg-white rounded-lg shadow-2xl flex flex-col"
       v-show="props.modelValue"
+      class="pointer-events-none fixed inset-4 mx-auto flex items-end md:w-96 lg:left-4 lg:mx-0 lg:w-80 lg:items-start"
     >
-      <div class="shrink-0 flex items-center flex-wrap bg-stone-200 border-b rounded-t-lg px-4 py-3">
-        <div class="grow text-stone-700 font-bold">{{ props.title }}</div>
-        <button type="button" class="text-stone-500 transition hover:text-red-500" @click="closeDialog">X</button>
-      </div>
-      <div class="grow overflow-auto p-4">
-        <slot></slot>
+      <div
+        class="pointer-events-auto flex max-h-full w-full flex-col rounded-lg bg-white shadow-2xl"
+      >
+        <div
+          class="flex shrink-0 flex-wrap items-center rounded-t-lg border-b bg-gray-200 px-4 py-3"
+        >
+          <div class="grow font-bold text-gray-700">{{ props.title }}</div>
+          <button
+            type="button"
+            class="text-gray-500 transition hover:text-red-500"
+            @click="closeDialog"
+          >
+            X
+          </button>
+        </div>
+        <div class="overflow-auto p-4">
+          <slot></slot>
+        </div>
       </div>
     </section>
   </transition>
