@@ -1,7 +1,15 @@
-# Vue 3 + Vite
+# covid-19-rapid-test-kits-map
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+能透過視覺化的地圖快速地找尋最近的販售店家及資訊
 
-## Recommended IDE Setup
+## Use Skils
 
-- [VS Code](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar)
+- Vite
+- Vue
+- TailwindCSS
+- Openlayers
+
+## Data Source
+
+政府公開資訊服務
+![健保特約機構防疫家用快篩剩餘數量明細](https://data.gov.tw/dataset/152408)
