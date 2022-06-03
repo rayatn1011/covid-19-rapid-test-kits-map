@@ -11,5 +11,4 @@
 
 ## Data Source
 
-政府公開資訊服務
-![健保特約機構防疫家用快篩剩餘數量明細](https://data.gov.tw/dataset/152408)
+[健保特約機構防疫家用快篩剩餘數量明細](https://data.gov.tw/dataset/152408)
