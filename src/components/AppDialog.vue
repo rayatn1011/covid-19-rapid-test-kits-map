@@ -33,7 +33,7 @@ const closeDialog = () => {
   >
     <section
       v-show="props.modelValue"
-      class="pointer-events-none fixed inset-4 mx-auto flex items-end md:w-96 lg:left-4 lg:mx-0 lg:w-80 lg:items-start"
+      class="pointer-events-none fixed inset-4 z-50 mx-auto flex items-end md:w-96 lg:left-4 lg:mx-0 lg:w-80 lg:items-start"
     >
       <div
         class="pointer-events-auto flex max-h-full w-full flex-col rounded-lg bg-white shadow-2xl"

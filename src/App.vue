@@ -227,7 +227,7 @@ provide("isMobile", isMobile);
       <MapBtnUserLocation />
     </section>
   </article>
-  <article id="sideBar" class="fixed top-0 left-0 bottom-0">
+  <article id="sideBar" class="fixed top-0 left-0 bottom-0 z-20">
     <AppDialog v-model="dialog.isVisible" :title="dialog.title">
       <template #default>
         <div class="flex flex-col gap-y-2 lg:gap-y-4">
